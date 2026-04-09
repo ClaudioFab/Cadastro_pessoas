@@ -4,11 +4,16 @@
  */
 package cadastrodepessoas;
 
+import java.util.Scanner;
+
 /**
  *
  * @author 1076313
  */
 public class Pessoa {
+    // === Importar funções ===
+    Scanner scan = new Scanner(System.in);
+    
     // ==== Organização de variáveis ====
     private String nome, CPF;
     private int idade;
@@ -45,7 +50,15 @@ public class Pessoa {
     public int getIdade() {
         return idade;
     }
-    
-    // ===== Funções usuário ====
 
+// ===== Funções usuário ====
+    
+    public void _listarInformacoes(){
+        // Mostra as informações da classe
+        System.out.println(
+                "Nome: " + this.nome +
+                "Idade: " + this.idade +
+                "CPF: " + this.CPF
+        );
+    }
 }
