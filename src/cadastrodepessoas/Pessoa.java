@@ -9,5 +9,6 @@ package cadastrodepessoas;
  * @author 1076313
  */
 public class Pessoa {
-    
+    private String nome, CPF;
+    private int idade;
 }
