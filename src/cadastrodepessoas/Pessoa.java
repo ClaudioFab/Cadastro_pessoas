@@ -1,15 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package cadastrodepessoas;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author 1076313
- */
+
 public class Pessoa {
     // === Importar funções ===
     Scanner scan = new Scanner(System.in);
@@ -54,8 +49,9 @@ public class Pessoa {
 
 // ===== Funções usuário ====
     private void conferirIdade(int idade){
-       if(idade <= 0 && idade >= 130){
-           System.out.println("Idade inválida! Tente novamente");
+       if(idade <= 0 || idade >= 130){
+           System.out.println("Idade inválida! Tente novamente.");
+           JOptionPane.showMessageDialog(null,"Idade inválida!\nTente novamente.","Erro!",JOptionPane.ERROR_MESSAGE);
        } else {
            this.idade = idade;
        }
@@ -63,10 +59,7 @@ public class Pessoa {
     
     public void listarInformacoes(){
         // Mostra as informações da classe
-        System.out.println(
-                "Nome: " + this.nome +
-                "Idade: " + this.idade +
-                "CPF: " + this.CPF
-        );
+        System.out.println("Nome: "+this.nome+"\nIdade: "+this.idade+"\nCPF: "+this.CPF+"\n\n");
+        
     }
 }
