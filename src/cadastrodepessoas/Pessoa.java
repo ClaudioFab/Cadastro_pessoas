@@ -22,7 +22,8 @@ public class Pessoa {
     public Pessoa(String nome, String CPF, int idade) {
         this.nome = nome;
         this.CPF = CPF;
-        this.idade = idade;
+        //Confere se a idade não está negativa
+        conferirIdade(idade);
     }
 
     // ==== Setters ====
@@ -35,7 +36,7 @@ public class Pessoa {
     }
     
     public void setIdade(int idade) {
-        this.idade = idade;
+        conferirIdade(idade);
     }
     
     // ==== Gueters ==== 
@@ -52,8 +53,15 @@ public class Pessoa {
     }
 
 // ===== Funções usuário ====
+    private void conferirIdade(int idade){
+       if(idade < 0){
+           System.out.println("Idade inválida! Tente novamente");
+       } else {
+           this.idade = idade;
+       }
+    }
     
-    public void _listarInformacoes(){
+    public void listarInformacoes(){
         // Mostra as informações da classe
         System.out.println(
                 "Nome: " + this.nome +
