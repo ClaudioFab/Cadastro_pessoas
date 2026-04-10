@@ -1,13 +1,11 @@
 
 package cadastrodepessoas;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 
 public class Pessoa {
     // === Importar funções ===
-    Scanner scan = new Scanner(System.in);
     
     // ==== Organização de variáveis ====
     private String nome, CPF;
@@ -60,6 +58,7 @@ public class Pessoa {
     public void listarInformacoes(){
         // Mostra as informações da classe
         System.out.println("Nome: "+this.nome+"\nIdade: "+this.idade+"\nCPF: "+this.CPF+"\n\n");
+        JOptionPane.showMessageDialog(null,"Nome: "+this.nome+"\nIdade: "+this.idade+"\nCPF: "+this.CPF,"Cadastrados",JOptionPane.INFORMATION_MESSAGE);
         
     }
 }
