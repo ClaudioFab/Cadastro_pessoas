@@ -29,7 +29,7 @@ public class Main_Cadastro {
                     cadastros.add(cadastrarPessoa());
                     break;
                 case 2:
-//                    mostrarCadastros(cadastros);
+                    mostrarCadastros(cadastros);
                     break;
                 case 3:
                     System.out.println("Finalizando sistema!");
@@ -43,34 +43,32 @@ public class Main_Cadastro {
     }
 
     public static Pessoa cadastrarPessoa() {
-        
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Digite o nome: ");
         String nome = scan.nextLine();
 
         System.out.println("Digite a idade: ");
-        int idade = scan.nextInt();scan.nextLine();
+        int idade = scan.nextInt();
+        scan.nextLine();
 
         System.out.println("Digite o cpf: ");
         String cpf = scan.nextLine();
 
-        Pessoa p = new Pessoa(nome, cpf, idade);
-
         return new Pessoa(nome, cpf, idade);
-        
+
     }
 
-//    public static void mostrarCadastros(ArrayList cadastros) {
-//        if(cadastros.isEmpty()){
-//            System.out.println("Lista vazia.");
-//        }else{
-//            System.out.println("Tem gente");
-//        }
-//
-//        for (Pessoa p8: cadastros) {
-//            System.out.println(cadastros.get(i).);
-//        }
-//    }
+    public static void mostrarCadastros(ArrayList<Pessoa> cadastros) {
+        if (cadastros.isEmpty()) {
+            System.out.println("Lista vazia.");
+        } else {
+            for (Pessoa p8 : cadastros) {
+                p8.listarInformacoes();
+            }
+        }
+
+    }
 
 }
