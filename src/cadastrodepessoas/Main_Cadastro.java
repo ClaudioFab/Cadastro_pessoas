@@ -7,43 +7,70 @@ public class Main_Cadastro {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        
-        
-       
+
+        menu();
         scan.close();
     }
 
     public static void menu() {
         Scanner scan = new Scanner(System.in);
+        ArrayList<Pessoa> cadastros = new ArrayList<>();
         int escolha = 0;
-        
-        do{
+
+        do {
             System.out.println("========Menu========");
             System.out.println("1. Cadastrar Pessoa");
             System.out.println("2. Consultar Cadastros");
             System.out.println("3. Finalizar");
             escolha = scan.nextInt();
-            
+
             switch (escolha) {
                 case 1:
-                    System.out.println("Cadastrando pessoas!");
+                    cadastros.add(cadastrarPessoa());
                     break;
                 case 2:
-                    System.out.println("Mostrando lista de pessoas!");
+//                    mostrarCadastros(cadastros);
                     break;
                 case 3:
                     System.out.println("Finalizando sistema!");
                     break;
                 default:
-                    System.out.println("Opção invalida, informando menu!");
+                    System.out.println("Opção invalida, retornando ao menu!");
             }
-            
-            
-        }while(escolha != 3);
+
+        } while (escolha != 3);
+
+    }
+
+    public static Pessoa cadastrarPessoa() {
+        
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite o nome: ");
+        String nome = scan.nextLine();
+
+        System.out.println("Digite a idade: ");
+        int idade = scan.nextInt();scan.nextLine();
+
+        System.out.println("Digite o cpf: ");
+        String cpf = scan.nextLine();
+
+        Pessoa p = new Pessoa(nome, cpf, idade);
+
+        return new Pessoa(nome, cpf, idade);
         
     }
-    
-    public static void mostrarCadastros(){
-        ArrayList<Pessoa> list = new ArrayList<>();
-    }
+
+//    public static void mostrarCadastros(ArrayList cadastros) {
+//        if(cadastros.isEmpty()){
+//            System.out.println("Lista vazia.");
+//        }else{
+//            System.out.println("Tem gente");
+//        }
+//
+//        for (Pessoa p8: cadastros) {
+//            System.out.println(cadastros.get(i).);
+//        }
+//    }
+
 }
