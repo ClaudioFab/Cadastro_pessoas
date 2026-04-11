@@ -10,6 +10,7 @@ public class Pessoa {
     // ==== Organização de variáveis ====
     private String nome, CPF;
     private int idade;
+    private int quantidade;
     
     // ==== Construtor ====
     public Pessoa(String nome, String CPF, int idade) {
@@ -60,5 +61,9 @@ public class Pessoa {
         System.out.println("Nome: "+this.nome+"\nIdade: "+this.idade+"\nCPF: "+this.CPF+"\n\n");
         JOptionPane.showMessageDialog(null,"Nome: "+this.nome+"\nIdade: "+this.idade+"\nCPF: "+this.CPF,"Cadastrados",JOptionPane.INFORMATION_MESSAGE);
         
+    }
+    
+    public void quantidade(){
+        this.quantidade++;
     }
 }
