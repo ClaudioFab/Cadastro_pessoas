@@ -48,7 +48,7 @@ public class Pessoa {
 // ===== Funções usuário ====
     private void conferirIdade(int idade){
        if(idade <= 0 || idade >= 130){
-           System.out.println("Idade inválida! Tente novamente.");
+           System.out.println("Idade inválida! Tente novamente.");       
            JOptionPane.showMessageDialog(null,"Idade inválida!\nTente novamente.","Erro!",JOptionPane.ERROR_MESSAGE);
        } else {
            this.idade = idade;

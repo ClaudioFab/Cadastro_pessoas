@@ -24,7 +24,7 @@ public class Main_Cadastro {
  
             switch (escolha) {
                 case 1:
-                    cadastros.add(cadastrarPessoa());
+                    cadastros.add(cadastrarPessoa());         
                     break;
                 case 2:
                     mostrarCadastros(cadastros);
@@ -54,7 +54,7 @@ public class Main_Cadastro {
         System.out.println("Digite o CPF: ");
         String cpf = JOptionPane.showInputDialog(null,"Digite o CPF: ","CPF",JOptionPane.QUESTION_MESSAGE);
 
-        return new Pessoa(nome, cpf, idade);
+        return new Pessoa(nome, cpf, idade);     
 
     }
 
@@ -63,11 +63,11 @@ public class Main_Cadastro {
             System.out.println("Lista vazia.");
             JOptionPane.showMessageDialog(null,"Lista vazia.","Vazio",JOptionPane.WARNING_MESSAGE);
         } else {
+            System.out.println("bleu");
+            
             for (Pessoa p8 : cadastros) {
                 p8.listarInformacoes();
             }
         }
-
     }
-
 }
