@@ -25,6 +25,13 @@ public class Main_Cadastro {
             switch (escolha) {
                 case 1:
                     cadastros.add(cadastrarPessoa());         
+
+                    Pessoa p = cadastrarPessoa();
+                    if (p.getIdade() == 0){
+                        System.out.println("Pessoa não cadastrada! Tente novamente!");
+                    } else {
+                        cadastros.add(p);
+                    }
                     break;
                 case 2:
                     mostrarCadastros(cadastros);
@@ -50,7 +57,7 @@ public class Main_Cadastro {
  
         System.out.println("Digite a idade: ");
         int idade = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite a idade: ","Idade",JOptionPane.QUESTION_MESSAGE));
- 
+        
         System.out.println("Digite o CPF: ");
         String cpf = JOptionPane.showInputDialog(null,"Digite o CPF: ","CPF",JOptionPane.QUESTION_MESSAGE);
 
