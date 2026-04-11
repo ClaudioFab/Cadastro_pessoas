@@ -20,14 +20,14 @@ public class Main_Cadastro {
 //            System.out.println("1. Cadastrar Pessoa");
 //            System.out.println("2. Consultar Cadastros");
 //            System.out.println("3. Finalizar");
-            escolha = Integer.parseInt(JOptionPane.showInputDialog(null,"1 - Cadastrar Pessoa\n\n2 - Consultar Cadastros\n\n3 - Finalizar\n\nEscolha a opção desejada.\n\n","Menu",JOptionPane.QUESTION_MESSAGE));
- 
+            escolha = Integer.parseInt(JOptionPane.showInputDialog(null, "1 - Cadastrar Pessoa\n\n2 - Consultar Cadastros\n\n3 - Finalizar\n\nEscolha a opção desejada.\n\n", "Menu", JOptionPane.QUESTION_MESSAGE));
+
             switch (escolha) {
                 case 1:
-                    cadastros.add(cadastrarPessoa());         
+                    cadastros.add(cadastrarPessoa());
 
                     Pessoa p = cadastrarPessoa();
-                    if (p.getIdade() == 0){
+                    if (p.getIdade() == 0) {
                         System.out.println("Pessoa não cadastrada! Tente novamente!");
                     } else {
                         cadastros.add(p);
@@ -38,12 +38,12 @@ public class Main_Cadastro {
                     break;
                 case 3:
                     System.out.println("Finalizando sistema!");
-                    JOptionPane.showMessageDialog(null,"Finalizando sistema!","Encerrando",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Finalizando sistema!", "Encerrando", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Opção invalida! Retornando ao menu!");
-                    JOptionPane.showMessageDialog(null,"Opção invalida!\n\nRetornando ao menu!","Erro",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Opção invalida!\n\nRetornando ao menu!", "Erro", JOptionPane.ERROR_MESSAGE);
             }
 
         } while (escolha != 3);
@@ -53,28 +53,40 @@ public class Main_Cadastro {
     public static Pessoa cadastrarPessoa() {
 
         System.out.println("Digite o nome: ");
-        String nome = JOptionPane.showInputDialog(null,"Digite o nome: ","Nome",JOptionPane.QUESTION_MESSAGE);
- 
-        System.out.println("Digite a idade: ");
-        int idade = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite a idade: ","Idade",JOptionPane.QUESTION_MESSAGE));
-        
-        System.out.println("Digite o CPF: ");
-        String cpf = JOptionPane.showInputDialog(null,"Digite o CPF: ","CPF",JOptionPane.QUESTION_MESSAGE);
+        String nome = JOptionPane.showInputDialog(null, "Digite o nome: ", "Nome", JOptionPane.QUESTION_MESSAGE);
 
-        return new Pessoa(nome, cpf, idade);     
+        System.out.println("Digite a idade: ");
+        int idade = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a idade: ", "Idade", JOptionPane.QUESTION_MESSAGE));
+
+        System.out.println("Digite o CPF: ");
+        String cpf = JOptionPane.showInputDialog(null, "Digite o CPF: ", "CPF", JOptionPane.QUESTION_MESSAGE);
+
+        return new Pessoa(nome, cpf, idade);
 
     }
 
     public static void mostrarCadastros(ArrayList<Pessoa> cadastros) {
         if (cadastros.isEmpty()) {
             System.out.println("Lista vazia.");
-            JOptionPane.showMessageDialog(null,"Lista vazia.","Vazio",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Lista vazia.", "Vazio", JOptionPane.WARNING_MESSAGE);
         } else {
             System.out.println("bleu");
-            
-            for (Pessoa p8 : cadastros) {
-                p8.listarInformacoes();
+
+            int escolha = Integer.parseInt(JOptionPane.showInputDialog(null, "1 - Mostrar lista\n\n2 - Pesquisar por nome\n\nEscolha a opção desejada.\n\n", "Menu", JOptionPane.QUESTION_MESSAGE));
+
+            switch (escolha) {
+                case 1:
+                    for (Pessoa p8 : cadastros) {
+                        p8.listarInformacoes();
+                    }
+                    break;
+                case 2:
+                    System.out.println("S");
+                    break;
+                default:
+                    System.out.println("Opção Invalida!");
             }
+
         }
     }
 }
