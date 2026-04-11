@@ -18,6 +18,7 @@ public class Pessoa {
         this.CPF = CPF;
         //Confere se a idade não está negativa
         conferirIdade(idade);
+        this.quantidade = quantidade;
     }
 
     // ==== Setters ====

@@ -24,8 +24,12 @@ public class Main_Cadastro {
  
             switch (escolha) {
                 case 1:
-                    var pessoa = cadastros.add(cadastrarPessoa());
-                    System.out.println(pessoa);
+                    Pessoa p = cadastrarPessoa();
+                    if (p.getIdade() == 0){
+                        System.out.println("Pessoa não cadastrada! Tente novamente!");
+                    } else {
+                        cadastros.add(p);
+                    }
                     break;
                 case 2:
                     mostrarCadastros(cadastros);
