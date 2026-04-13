@@ -1,6 +1,7 @@
 package cadastrodepessoas;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Main_Cadastro {
@@ -35,7 +36,7 @@ public class Main_Cadastro {
                     System.out.println("Programa finalizado");
                     JOptionPane.showMessageDialog(null, "Programa finalizado.","Encerrando", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
-                    break;    
+                    break;
                 default:
                     System.out.println("Opção invalida! Retornando ao menu!");
                     JOptionPane.showMessageDialog(null, "Opção invalida!\n\nRetornando ao menu!", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -73,10 +74,8 @@ public class Main_Cadastro {
             
             }else if(opcao.toString().equals("Pesquisar por nome")){
                 System.out.println("Pesquisa por nome");
-                
-
-
-                //CONTINUAR AQUI A FASE DE PESQUISAR NOME!
+                    
+                pesquisarPessoa(cadastros);
 
 
 
@@ -88,8 +87,19 @@ public class Main_Cadastro {
                 System.out.println("Voltar");
                 return;
             }
-                
+        }
+    }
+    
+    public static void pesquisarPessoa(ArrayList<Pessoa> cadastros){
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Digite o nome da pessoa: ");
+        String nome = scan.nextLine();
+        
+        for (Pessoa p : cadastros){
+            if (p.getNome().equalsIgnoreCase(nome)) {
+                p.listarInformacoes();
+            } 
         }
     }
 
