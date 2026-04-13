@@ -74,7 +74,7 @@ public class Main_Cadastro {
             
             }else if(opcao.toString().equals("Pesquisar por nome")){
                 System.out.println("Pesquisa por nome");
-                    
+                
                 pesquisarPessoa(cadastros);
 
 
@@ -91,10 +91,8 @@ public class Main_Cadastro {
     }
     
     public static void pesquisarPessoa(ArrayList<Pessoa> cadastros){
-        Scanner scan = new Scanner(System.in);
-
         System.out.println("Digite o nome da pessoa: ");
-        String nome = scan.nextLine();
+        String nome = JOptionPane.showInputDialog(null,"Digite o nome da pessoa: ","Pesquisa por nome",JOptionPane.QUESTION_MESSAGE);
         
         for (Pessoa p : cadastros){
             if (p.getNome().equalsIgnoreCase(nome)) {
