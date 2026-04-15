@@ -1,7 +1,6 @@
 package cadastrodepessoas;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Main_Cadastro {
@@ -68,6 +67,7 @@ public class Main_Cadastro {
         
             if (opcao.toString().equals("Mostrar lista de Cadastros")) {
                 System.out.println("lista de Cadastros");
+                //forEach parra array
                 for (Pessoa p8 : cadastros) {
                     p8.listarInformacoes();  
                 }
