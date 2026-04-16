@@ -67,7 +67,7 @@ public class Main_Cadastro {
         
             if (opcao.toString().equals("Mostrar lista de Cadastros")) {
                 System.out.println("lista de Cadastros");
-                //forEach parra array
+                //forEach parra array, roda a quantidade de "pessoas na lista"
                 for (Pessoa p8 : cadastros) {
                     p8.listarInformacoes();  
                 }
@@ -94,11 +94,19 @@ public class Main_Cadastro {
         System.out.println("Digite o nome da pessoa: ");
         String nome = JOptionPane.showInputDialog(null,"Digite o nome da pessoa: ","Pesquisa por nome",JOptionPane.QUESTION_MESSAGE);
         
+        //forEach parra array, roda a quantidade de "pessoas na lista"
         for (Pessoa p : cadastros){
+            //equalsIgnoreCase para ignorar diferença entre maiuscula e minuscula
             if (p.getNome().equalsIgnoreCase(nome)) {
+                JOptionPane.showMessageDialog(null,"Pessoa encontrada!","Identificado",JOptionPane.INFORMATION_MESSAGE);
                 p.listarInformacoes();
-            } 
+            }else{
+                JOptionPane.showMessageDialog(null,"Pessoa não encontrada!","Erro",JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 
 }
+/*
+cadastros.size(); para saber numero de cadastrados no array
+*/
